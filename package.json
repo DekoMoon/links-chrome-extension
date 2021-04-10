@@ -1,0 +1,15 @@
+{
+  "name": "links",
+  "version": "1.0.0",
+  "description": "",
+  "main": "popup.js",
+  "scripts": {
+    "dev": "parcel popup.html",
+    "build": "rm -rf dist/* && parcel build popup.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}

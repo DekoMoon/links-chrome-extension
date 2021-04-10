@@ -1,0 +1,281 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 320px;
+  background-color: grey;
+  margin: 0;
+}
+
+header {
+  width: 100%;
+  background-color: hsla(70, 100%, 100%, 0.9);
+  border-bottom: 3px solid black;
+  position: relative;
+  padding: 5px 0;
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+}
+
+input {
+  border: 1px solid black;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+header > button {
+  --button-size: 30px;
+  --half-butsize: calc(var(--button-size)/2);
+
+  width: var(--button-size);
+  height: var(--button-size);
+
+  background-color: white;
+  border: 1px solid hsla(0, 0%, 20%, 1);
+  border-radius: 50%;
+  outline: none;
+}
+
+header > button:active {
+  background-color: hsla(0, 0%, 90%, 1);
+}
+
+.hidden {
+  display: none;
+}
+
+
+/* Header */
+
+.head-button {
+  position: absolute;
+  top: calc(50% - var(--half-butsize));
+}
+
+.add-cell {
+  position: absolute;
+  top: calc(50% - var(--half-butsize));
+  left: 10px;
+}
+
+.edit-link {
+  background-image: url("./img/pencil.png");
+  background-repeat: no-repeat;
+  background-clip: padding-box;
+  background-position: center;
+  background-size: 15px 15px;
+
+  right: 10px;
+}
+
+
+/* Modal */
+
+.modal-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: hsla(0, 0%, 0%, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.modal {
+  width: 85%;
+  background-color: white;
+  border: 2px outset black;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: fixed;
+  left: 7.5%;
+  top: 18%;
+}
+
+.modal > * {
+  margin: 5px 0;
+}
+
+.modal a:active {
+  transform: translateY(1px);
+}
+
+.close-modal {
+  font-size: 0.9rem;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+
+  border: none;
+  background: none;
+  outline: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  cursor: pointer;
+}
+
+
+.modal > input {
+  width: 90%;
+  outline: none;
+}
+
+.title {
+  margin-top: 10px;
+}
+
+.major-modal-button {
+  font-size: 1rem;
+  color: black;
+  text-decoration: none;
+  border: none;
+  border-radius: 0;
+}
+
+.modify-cell {
+  margin-bottom: 10px;
+}
+
+.delete-cell {
+  font-size: 0.8rem;
+  color: hsla(0, 0%, 0%, 0.5);
+
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+}
+
+
+
+
+/* Conformation Modal */
+
+.confirm-delete-modal {
+  width: 70%;
+  background-color: white;
+  border: 2px outset black;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  position: absolute;
+  left: 50%;
+  top: 18%;
+  
+  transform: translateX(-50%);
+}
+
+.confirm-delete-modal > h2 {
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.side-by-side-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.delete-yes {
+  color: hsla(0, 0%, 0%, 0.55);
+}
+
+
+
+
+/* Container */
+
+.container {
+  margin: 5px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.individual-cell-container {
+  width: 90%;
+  margin: 5px 0;
+}
+
+.link {
+  width: 100%;
+
+  color: hsla(0, 100%, 50%, 0.80);
+  font-weight: normal;
+  text-decoration: none;
+  text-align: center;
+
+  background-color: hsla(0, 0%, 100%, 0.9);
+  padding: 7.5px 0;
+  margin: 0;
+  box-shadow: 2px 2px hsla(0, 0%, 10%, 0.5);
+
+  display: block;
+}
+
+.link:active {
+  background-color: hsla(0, 0%, 90%, 0.9);
+  /* pointer-events: none; Can't use this because drag and drop events won't happen */
+}
+
+
+
+
+/* Pointer Event */
+
+.pointer-event {
+  pointer-events: none;
+}
+
+
+
+
+
+/* Animate Error */
+
+.error {
+  border-color: red;
+  position: relative;
+  animation-name: error;
+  animation-duration: 200ms;
+  animation-iteration-count: 5;
+}
+
+@keyframes error {
+  0% {
+    left: 0;
+  }
+  
+  25% {
+    left: 2px;
+  }
+
+  75% {
+    left: -2px;
+  }
+
+  100% {
+    left: 0;
+  }
+}

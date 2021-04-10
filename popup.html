@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Links</title>
+    <link rel="stylesheet" href="popup.css">
+    <script defer type="module" src="popup.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <button class="add-cell head-button">+</button>
+      <h1>Links</h1>
+      <button class="edit-link head-button"></button>
+    </header>
+
+    <div class="outer-wrapper modal-wrapper hidden">
+
+
+      <div class="modal">
+        <a class="close-modal">X</a>
+        <h2 class="title">Modify Link</h2>
+        <select name="cells" id="select-cell">
+          <option value="">Choose A Link</option>
+        </select>
+        <input type="text" placeholder="Name" class="input-name">
+        <input type="text" placeholder="Link" class="input-anchor">
+        <a href="#" class="modify-cell major-modal-button" draggable="false">Edit</a>
+        <a href="#" class="delete-cell major-modal-button hidden" draggable="false">Delete</a>
+
+        <div class="inner-wrapper modal-wrapper hidden">
+          <div class="modal confirm-delete-modal">
+            <h2 class="title">Are You Sure You Want To Delete It?</h2>
+            <div class="side-by-side-buttons">
+              <a href="#" class="major-modal-button delete-yes" draggable="false">Delete</a>
+              <a href="#" class="major-modal-button delete-no" draggable="false">No</a>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <div class="container"></div>
+  </body>
+</html>
